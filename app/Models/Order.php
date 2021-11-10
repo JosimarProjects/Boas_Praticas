@@ -16,7 +16,7 @@ class Order extends Model
      */
 
      //função deverá começar com scope e iniciar com letra maiuscula
-    public function scopePending($query)
+  /*  public function scopePending($query)
     {
         return $query->where('status', 'pending');
     }
@@ -24,10 +24,15 @@ class Order extends Model
     public function scopeDelivered($query)
     {
         return $query->where('status', 'delivered');
-    }
+    }*/
 
     public function scopePaid($query){
         return $query->where('paid', true);
+    }
+
+    public function scopeStatus($query, $status)
+    {
+        return $query->where('status', $status);
     }
 
     //Acessors

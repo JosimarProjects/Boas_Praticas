@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->enum('status', ['delivered', 'pending']);
+            $table->enum('status', ['delivered', 'pending', 'cancel']);
             $table->boolean('paid');
             $table->string('track_code')->nullable();
             $table->timestamps();

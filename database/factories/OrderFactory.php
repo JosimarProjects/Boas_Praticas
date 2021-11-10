@@ -19,7 +19,7 @@ class OrderFactory extends Factory
     {
         return [
             //
-            'status' => $this->faker->randomElement(['pending', 'delivered']),
+            'status' => $this->faker->randomElement(['pending', 'delivered', 'cancel']),
             'paid' => $this->faker->boolean(50),
             'track_code' => md5(uniqid(rand(), true))
         ];
