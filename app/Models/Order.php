@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    /**Magic Scopes
+     * App\Models\Order::latest()->get();
+     * App\Models\Order::inRandomOrder()->get();  
+    */
 /**global scope */
     protected static function boot()
     {
