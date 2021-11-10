@@ -10,20 +10,17 @@ class OrderController extends Controller
     //
     public function index()
     {
-        $orders = Order::all();
-        if (request()->get('status')){
-            switch (request()->get('status')) {
-                case 'pending':
-                    $orders = $orders->where('status', 'pending');
-                break;
-                case 'delivered':
-                    $orders = $orders->where('status', 'delivered');
-                break;
-            }
-        }
-        if (request()->get('paid') == 1) {
-            $orders = $orders->where('paid', 1);
-        }
+        $orders = Order::where(function ($query) {
+            if (request()->get('status') == 'pending')
+                $query->pending();
+
+            if (request()->get('status') == 'delivered')
+                $query->delivered();
+
+            if (request()->get('paid') == 1)
+                $query->paid();
+        })->get();
+
 
         return view('dashboard.orders', compact('orders'));
     }

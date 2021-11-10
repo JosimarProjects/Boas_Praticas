@@ -9,6 +9,27 @@ class Order extends Model
 {
     use HasFactory;
 
+    //Scopes
+    /**
+     * @param Builder $query
+     * return Builder
+     */
+
+     //função deverá começar com scope e iniciar com letra maiuscula
+    public function scopePending($query)
+    {
+        return $query->where('status', 'pending');
+    }
+
+    public function scopeDelivered($query)
+    {
+        return $query->where('status', 'delivered');
+    }
+
+    public function scopePaid($query){
+        return $query->where('paid', true);
+    }
+
     //Acessors
     //função deve começar com get e camelCase e acabar com atrribute
     public function getFormattedStatusAttribute()
