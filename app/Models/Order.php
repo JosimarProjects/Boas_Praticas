@@ -8,8 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+/**global scope */
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('status', function($builder) {
+            $builder->where('status', '<>', 'cancel');
+        });
 
-    //Scopes
+    }
+
+    //Scopes locais
     /**
      * @param Builder $query
      * return Builder
@@ -39,7 +48,20 @@ class Order extends Model
     //função deve começar com get e camelCase e acabar com atrribute
     public function getFormattedStatusAttribute()
     {
-        return $this->status == 'pending' ? 'Envio pendente' : 'Produto enviado';
+        switch($this->status) {
+            case 'pending':
+                return 'Envio pendente';
+            break;
+
+            case 'delivered':
+                return 'Produto enviado';
+            break;
+
+            case 'cancel':
+                return 'Cancelado';
+            break;
+        }
+
     }
 
     public function getStatusPaidAttribute()
