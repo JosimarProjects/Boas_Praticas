@@ -43,7 +43,8 @@ https://github.com/JosimarProjects/Boas_Praticas/blob/main/app/Models/Order.php
 https://github.com/JosimarProjects/Boas_Praticas/blob/main/app/Http/Requests/OrderRequest.php
 ![screenshot_20211115_153435](https://user-images.githubusercontent.com/75262276/141835733-62769c46-8487-467a-84b4-70b42d35dd6d.png)
 <br>
-![screenshot_20211115_153516](https://user-images.githubusercontent.com/75262276/141835821-53c14136-2360-4cf3-9179-7c56f1ea9ed4.png)
+![screenshot_20211115_154946](https://user-images.githubusercontent.com/75262276/141837641-12deaf22-9e6f-4fa9-9c31-5439014f23f3.png)
+
 
 ## 6- Repository Pattner 
 
