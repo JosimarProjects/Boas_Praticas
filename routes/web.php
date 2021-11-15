@@ -21,18 +21,18 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/all', [OrderController::class, 'all']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => 'auth', 'prefix' => 'orders/'], function() {
+Route::group(['middleware' => 'auth', 'prefix' => 'orders/'], function () {
     Route::get('/', [OrderController::class, 'index'])
-    ->name('orders.index');
+        ->name('orders.index');
+
+
 
     Route::get('/create', [OrderController::class, 'create'])
-    ->name('orders.create');
+        ->name('orders.create');
 
     Route::post('/create', [OrderController::class, 'store'])
-    ->name('order.store');
-
+        ->name('order.store');
 });
-

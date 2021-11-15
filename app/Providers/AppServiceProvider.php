@@ -5,7 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\User;
 use App\Observers\UserObserver;
-
+use App\Repositories\OrderRepository;
+use App\Repositories\OrderRepositoryEloquent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+           OrderRepository::class, OrderRepositoryEloquent::class
+        );
     }
 
     /**

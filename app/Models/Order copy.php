@@ -2,21 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Prettus\Repository\Contracts\Transformable;
-use Prettus\Repository\Traits\TransformableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-
-/**
- * Class Order.
- *
- * @package namespace App\Models;
- */
-class Order extends Model implements Transformable
+class Order extends Model
 {
-    use TransformableTrait;
-
     use HasFactory;
 
     protected $fillable = [
@@ -95,6 +85,7 @@ class Order extends Model implements Transformable
     {
         $this->attributes['track_code'] = "COD_{$value}";
     }
+
 
 
 

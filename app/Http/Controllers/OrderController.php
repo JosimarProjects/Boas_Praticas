@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\OrderRequest;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Repositories\OrderRepository;
+use App\Repositories\OrderRepositoryEloquent;
 
 class OrderController extends Controller
 {
@@ -23,19 +25,19 @@ class OrderController extends Controller
         return view('dashboard.orders.index', compact('orders'));
     }
 
-    public function create() {
+    public function All(OrderRepository $repository){
+        return $repository->listAll(0);
+    }
+
+    public function create()
+    {
         return view('dashboard.orders.create');
     }
 
 
-    public function store(OrderRequest $request){
-
-
-       $order = Order::create($request->all());
-       dd($order);
-
-
-
+    public function store(OrderRequest $request)
+    {
+        $order = Order::create($request->all());
+        dd($order);
     }
-
 }
