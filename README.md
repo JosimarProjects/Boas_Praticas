@@ -13,7 +13,8 @@ https://github.com/JosimarProjects/Boas_Praticas/blob/main/app/Models/Order.php
 https://github.com/JosimarProjects/Boas_Praticas/blob/main/app/Models/Order.php
 ![screenshot_20211115_152901](https://user-images.githubusercontent.com/75262276/141835098-4e8aad92-753e-492d-84d6-10c253177b77.png)
 #### Chamando o acessor na view blade:
-![screenshot_20211115_153059](https://user-images.githubusercontent.com/75262276/141835319-ba9c869b-97bb-4cb4-b2ef-065dc642f9b7.png)
+![screenshot_20211115_155145](https://user-images.githubusercontent.com/75262276/141837898-9debab50-18ba-410e-acbf-922c757c3bb8.png)
+
 
 
 
