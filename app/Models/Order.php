@@ -24,18 +24,12 @@ class Order extends Model implements Transformable
         'track_code'
     ];
 
-    /**Magic Scopes
-     * App\Models\Order::latest()->get();
-     * App\Models\Order::inRandomOrder()->get();
-    */
-/**global scope */
     protected static function boot()
     {
         parent::boot();
-        static::addGlobalScope('status', function($builder) {
+        static::addGlobalScope('status', function ($builder) {
             $builder->where('status', '<>', 'cancel');
         });
-
     }
 
     //Scopes locais
@@ -44,18 +38,10 @@ class Order extends Model implements Transformable
      * return Builder
      */
 
-     //função deverá começar com scope e iniciar com letra maiuscula
-  /*  public function scopePending($query)
-    {
-        return $query->where('status', 'pending');
-    }
+    //função deverá começar com scope e depois em camelcase iniciar com letra maiuscula
 
-    public function scopeDelivered($query)
+    public function scopePaid($query)
     {
-        return $query->where('status', 'delivered');
-    }*/
-
-    public function scopePaid($query){
         return $query->where('paid', true);
     }
 
@@ -68,20 +54,19 @@ class Order extends Model implements Transformable
     //função deve começar com get e camelCase e acabar com atrribute
     public function getFormattedStatusAttribute()
     {
-        switch($this->status) {
+        switch ($this->status) {
             case 'pending':
                 return 'Envio pendente';
-            break;
+                break;
 
             case 'delivered':
                 return 'Produto enviado';
-            break;
+                break;
 
             case 'cancel':
                 return 'Cancelado';
-            break;
+                break;
         }
-
     }
 
     public function getStatusPaidAttribute()
@@ -95,7 +80,4 @@ class Order extends Model implements Transformable
     {
         $this->attributes['track_code'] = "COD_{$value}";
     }
-
-
-
 }
