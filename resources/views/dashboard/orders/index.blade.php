@@ -6,9 +6,12 @@
     <a href="{{route('orders.index', ['status' => 'delivered'])}}" class="btn btn-warning">Pedidos pendentes</a>
     <a href="{{route('orders.index', ['paid' => 1])}}" class="btn btn-success">Pedidos pagos</a>
     <a href="{{route('orders.index')}}" class="btn btn-light">Limpar filtro</a>
+    <hr>
 
+    <a href="{{route('orders.create')}}" class="btn btn-primary">Novo pedido</a>
 
     <hr>
+
     <table class="table table-bordered">
         <thead>
             <tr>
