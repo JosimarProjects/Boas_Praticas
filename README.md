@@ -39,7 +39,7 @@ https://github.com/JosimarProjects/Boas_Praticas/blob/main/app/Models/Order.php
 
 ## 5- Request validate
 
-#### Conforme padrões de boas práticas o projeto foi feito com um request separado das regras de negócio
+#### Conforme padrões de boas práticas o projeto foi feito com um request validate separado das regras de negócio
 https://github.com/JosimarProjects/Boas_Praticas/blob/main/app/Http/Requests/OrderRequest.php
 ![screenshot_20211115_153435](https://user-images.githubusercontent.com/75262276/141835733-62769c46-8487-467a-84b4-70b42d35dd6d.png)
 <br>
